@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>PHP Watch Movies SCript</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;PHP Watch Movies Script&rdquo; Documentation by &ldquo;crivion&rdquo; v2.5</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;PHP Watch Movies Script&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: Nov 2015<br>
+					By: Alex Crivion<br>
+					Email: <a href="mailto:office@crivion.com">office@crivion.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my script. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/crivion">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#install-db">Installing database</a></li>
+			<li><a href="#install-script">Installing script</a></li>
+			<li><a href="#config-title">Configure Website Title &amp; Admin Credentials</a></li>
+			<li><a href="#admin-panel">Admin Area Overview</a></li>
+			<li><a href="#admin-panel">Upgrading from 2.3 to 2.5</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="install-db"><strong>A) Installing DATABASE</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Go to your hosting Control Panel and point to the database manager (like PHPMyAdmin)</li>
+				<li>Create a MySQL database and ASSIGN a MySQL User to it.<br/>
+					Go to phpMyAdmin and the database you've just created. <br/>
+					Import the file located into "database_upload/db.sql" folder.</li> 
+
+				<li>Step two is to open <em>application/config/database.php</em> with any text editor and update mysql database connection info<br/>
+
+					<em>LINES 51 TO 54</em><br/><br/>
+
+					<img src="assets/images/db-code-view.png" alt="db code view" /><br/>
+
+				</li>
+
+			</ul>	
+			
+		<hr>
+
+		<h3 id="install-script"><strong>B) Installing the SCRIPT</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Connect to your hosting and upload the extracted zip file folder of the script to your domain. (must be under either root or subdomain. No subfolders please.)</li>
+				<li>Make sure <strong>.htaccess</strong> file is included otherwise the script will mallfunction as the file is required to do the mod_rewrite SEO friendly URL's job</li>
+			</ul>	
+			
+		<hr>
+
+		<h3 id="config-title"><strong>C) Configure Website Title &amp; Admin Credentials</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>application/config/config.php</strong> and the same you did for the database file Open with a text editor.</li>
+				<li>For the <strong>admin credentials</strong> edit lines <em>5 &amp; 6</em></li>
+				<li>
+					For the <strong>site title</strong> edit line 7</strong><br/><br/>
+					<img src="assets/images/config-script.png" alt="config script" /><br/>
+				</li>
+			</ul>	
+			
+		<hr>
+
+		<h3 id="admin-panel"><strong>D) Admin Area Overview</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			<ul>
+				<li>Navigate to <strong>your-website-url.com/admin</strong> and login with the credentials you've just configured earlier.</li>
+				<li><strong>Adding new movies:</strong> : navigate to <strong>Add movies</strong> tab. If you wish, if available you can enter the IMDB URL and the informations should automatically be completed.</li>
+				<li><strong>Movie Links &amp; Tabs</strong> : go to movies tab and click "X links". You will have an option to add more links, approve (if any pending) or edit/remove a specific movie/tv show links.</li>
+				<li><strong>TOS Page</strong>: Point to TOS tab &amp; there's a text area accepting HTML tags as well</li>
+				<li><strong>Configure ADS</strong>:Point to ADS tab &amp; there's a text area accepting HTML tags as well</li>
+			</ul>	
+			
+		<hr>
+
+		<h3 id="admin-panel"><strong>E) Upgrading from 2.3 to 2.5</strong> - <a href="#toc">top</a></h3>
+		
+		
+		For upgrading from version 2.3 to 2.5 
+		<br />
+		Replace the following files (reupload &amp; overwrite):
+
+		<pre>Controllers Changed:
+===
+application/controllers/home.php
+application/controllers/watchmovies.php
+
+Helpers Changed:
+===
+application/helpers/related_sidebar_helper.php
+
+
+Views Changed:
+=== 
+application/views/home.php
+application/views/watch-movies.php
+application/views/all-movies.php
+application/views/header.php
+application/views/sidebar.php
+application/views/join-now.php
+application/views/login.php
+
+CSS Changed:
+==
+css/style.css
+
+Logo Changed:
+====
+img/video.png
+</pre>
+
+		<hr>
+
+		
+		
+		<p class="append-bottom alt large"><strong>Alex Crivion</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
